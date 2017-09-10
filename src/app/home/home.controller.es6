@@ -20,13 +20,16 @@ export default class HomeController {
       });
     }
 
-    changeSum(event) {
-      this.sum = this.currentPhone.price * this.quantity;
+    changeSum() {
+      this.sum = this.currentPhone.price * (this.quantity || 1);
     }
 
     addToCart() {
       this.ngDialog.close();
-      this.shoppingState.pushPhones(this.currentPhone, this.quantity);
+
+      if (this.quantity) {
+        this.shoppingState.pushPhones(this.currentPhone, this.quantity);
+      }
     }
   }
   

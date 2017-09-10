@@ -12,9 +12,9 @@
 					<table>
 						<thead class="table-head">
 							<tr>
-								<td></td>
+								<td class="hidden-sm hidden-xs"></td>
 								<td>Наименование</td>
-								<td align="center">Описание</td>
+								<td class="hidden-xxs" align="center">Описание</td>
 								<td align="center">Количество</td>
 								<td align="center">Цена</td>
 								<td></td>
@@ -22,11 +22,11 @@
 						</thead>
 						<tbody>
 							<tr class="phone-row" ng-repeat="phone in cart.shoppingState.addedPhones">
-								<td>
+								<td class="hidden-sm hidden-xs">
 									<img ng-src="{{ phone.imageUrl }}" class="image" alt="{{ phone.name }}">
 								</td>
 								<td class="bold">{{ phone.name }}</td>
-								<td>{{ phone.snippet }}</td>
+								<td class="hidden-xxs">{{ phone.snippet }}</td>
 								<td align="center">
 									<div class="control-wrapper">
 										<span class="quantity">{{phone.quantity }}</span>
@@ -48,7 +48,7 @@
 		</div>
 
 		<div class="row" ng-hide="cart.shoppingState.addedPhones.length === 0">
-			<div class="col-md-4 col-md-offset-8 text-right">
+			<div class="col-md-12 text-right">
 				<div class="table-footer">
 					Ваш заказ на сумму <span class="bold">{{ cart.shoppingState.totalMoney }}<span class="g-ruble"></span></span>
 					<button type="button" class="btn btn-success btn-lg disabled">Оплатить</button>
