@@ -163,20 +163,15 @@ module.exports = function makeWebpackConfig() {
   // Initialize module
   config.module = {
     rules: [{
-      // JS LOADER
-      // Reference: https://github.com/babel/babel-loader
-      // Transpile .js files using babel-loader
-      // Compiles ES6 and ES7 into ES5 code
-      test: /\.(js|es)$/,
-      loader: 'babel-loader',
-      query: {
-        presets: [
-          ["es2015", {"modules": false, "loose": true}],
-          "stage-3"
-        ],
-        plugins: []
-      },
-      exclude: /node_modules/
+      test: /\.(js|es6)$/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015'],
+          },
+        },
+      ],
     }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader
@@ -309,7 +304,7 @@ module.exports = function makeWebpackConfig() {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      // new webpack.optimize.UglifyJsPlugin({minimize: true}),
+      new webpack.optimize.UglifyJsPlugin({minimize: true}),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
