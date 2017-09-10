@@ -210,7 +210,8 @@ module.exports = function makeWebpackConfig() {
     //   loader: 'file-loader'
     // },
     { test: /\.(svg)(|\?[^!]*?)$/i, include: /[\/\\](?:web|)fonts?[\/\\]/i, loader: 'file-loader?name=fonts/[name].[hash:7].[ext]' },
-    { test: /(?:\.(woff|woff2|eot|ttf|otf))(|\?[^!]*?)$/i, loader: 'file-loader?name=fonts/[name].[hash:7].[ext]' },
+    // { test: /(?:\.(woff|woff2|eot|ttf|otf))(|\?[^!]*?)$/i, loader: 'file-loader?name=fonts/[name].[hash:7].[ext]' },
+    {test: /\.(woff|woff2|eot|ttf)$/i, loader: 'url-loader'},
     { test: /\.(jpe?g|png|gif)(|\?[^!]*?)$/i, loaders: imgLoaders },
     {
       // HTML LOADER

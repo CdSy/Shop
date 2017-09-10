@@ -1,7 +1,5 @@
-@fontPath: '../fonts/';
-
 .createFont(@folder: '', @fontName: 'sans-serif') {
-    @filePath: '@{fontPath}@{folder}/@{fontName}/@{fontName}';
+    @filePath: '../fonts/@{folder}/@{fontName}/@{fontName}';
 
     font-family: @fontName;
     src: url('@{filePath}.eot');
