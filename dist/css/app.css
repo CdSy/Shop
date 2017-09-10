@@ -6865,14 +6865,32 @@ button.close {
       align-items: stretch;
   padding-bottom: 150px;
 }
+@media (max-width: 767px) {
+  .phones-wrapper {
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding-bottom: 60px;
+  }
+}
 .b-phone-card {
   position: relative;
   max-width: 33%;
+  min-width: 237px;
   margin-bottom: 30px;
   padding: 10px 16px 55px;
   -ms-flex: 1 2 33.33333333%;
       flex: 1 2 33.33333333%;
   text-align: center;
+}
+@media (max-width: 767px) {
+  .b-phone-card {
+    max-width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .b-phone-card {
+    max-width: 60%;
+  }
 }
 .b-phone-card .name,
 .b-phone-card .price {
@@ -6902,12 +6920,22 @@ button.close {
 .p-cart-page {
   padding-bottom: 150px;
 }
+@media (max-width: 767px) {
+  .p-cart-page {
+    padding-bottom: 60px;
+  }
+}
 .p-cart-page .title {
   font-size: 40px;
   margin: 0 0 15px;
 }
 .p-cart-page .fa {
   font-size: 60px;
+}
+@media (max-width: 550px) {
+  .p-cart-page .hidden-xxs {
+    display: none;
+  }
 }
 .p-cart-page .phone-row.ng-enter,
 .p-cart-page .phone-row.ng-leave {
@@ -6943,6 +6971,16 @@ button.close {
 .p-cart-page .table-body td {
   padding: 15px 30px;
 }
+@media (max-width: 767px) {
+  .p-cart-page .table-body td {
+    padding: 15px 10px;
+  }
+}
+@media (max-width: 550px) {
+  .p-cart-page .table-body td {
+    padding: 15px 6px;
+  }
+}
 .p-cart-page .table-body .remove-stuff {
   border-bottom: 1px dotted #a6a6a6;
   opacity: 0.5;
@@ -6955,8 +6993,19 @@ button.close {
 .p-cart-page .table-body .bold {
   font-weight: 600;
 }
+@media (max-width: 480px) {
+  .p-cart-page .table-footer {
+    text-align: center;
+  }
+}
 .p-cart-page .table-footer .btn {
   margin-left: 15px;
+}
+@media (max-width: 480px) {
+  .p-cart-page .table-footer .btn {
+    display: block;
+    margin: 15px auto;
+  }
 }
 .p-cart-page .table-footer .bold {
   margin-left: 5px;

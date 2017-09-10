@@ -6,8 +6,8 @@
   <title>Angular App</title>
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="icons/font-awesome-4.7.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="dist/app.5310df9a62773f941ebe.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <script type="text/javascript" src="dist/app.9e10b309d41783f612ad.js"></script>
   <base href="/">
   <link href="dist/css/app.css" rel="stylesheet">
 </head>
@@ -26,28 +26,28 @@
   <header class="header" ng-controller="HeaderController as header">
     <div class="container">
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-1 col-sm-2 col-xs-6">
           <a href="/" class="link">Главная</a>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1 hidden-xs col-sm-2">
           <a href="/shopping-cart" class="link">Корзина</a>
         </div>
-        <div class="col-md-3 col-md-offset-7 text-right">
+        <div class="col-md-3 col-sm-4 col-xs-6 col-sm-offset-4 col-md-offset-7 text-right">
           <div class="shoping-cart">
             <div class="text-center">{{ header.shoppingState.totalMoney }} <span class="g-ruble"></span></div>
             <a href="/shopping-cart" class="cart text-center">
-                  <i class="fa fa-shopping-cart fa-6" aria-hidden="true"></i>
-                  <div class="quantity text-center">{{ header.shoppingState.quantity }}</div> 
-                </a>
-
+              <i class="fa fa-shopping-cart fa-6" aria-hidden="true"></i>
+              <div class="quantity text-center">{{ header.shoppingState.quantity }}</div> 
+            </a>
+            
             <!-- <div class="info">
-                  <div>
-                    В корзине <span class="bold">{{ header.shoppingState.quantity }} товаров</span>
-                  </div>
-                  <div>
-                    На сумму <span class="bold">{{ header.shoppingState.totalMoney }} рублей</span>
-                  </div>
-                </div> -->
+              <div>
+                В корзине <span class="bold">{{ header.shoppingState.quantity }} товаров</span>
+              </div>
+              <div>
+                На сумму <span class="bold">{{ header.shoppingState.totalMoney }} рублей</span>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
