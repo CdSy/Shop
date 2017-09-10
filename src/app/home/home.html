@@ -3,7 +3,7 @@
 		<div class="b-phone-card" ng-repeat="phone in home.shoppingState.phones">
 			<img ng-src="{{ phone.imageUrl }}" class="image" alt="{{phone.name}}">
 			<div class="name">{{ phone.name }}</div>
-			<div class="price">{{ phone.price }} рублей</div>
+			<div class="price">{{ phone.price }}<span class="g-ruble"></span></div>
 			<button ng-click="home.buyPhone(phone)" type="button" class="btn btn-primary btn-default">
 				<i class="fa fa-cart-plus fa-2" aria-hidden="true"></i>
 				В корзину

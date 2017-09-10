@@ -4,7 +4,7 @@ import phonesList from './../../json/phones.json';
 class ShoppingState {
   constructor() {
     this.phones = phonesList;
-    this.checkedPhones = [];
+    this.addedPhones = [];
     this.currentPhone = {
       price: 0
     };
@@ -13,36 +13,36 @@ class ShoppingState {
   }
 
   pushPhones(phone, quantity) {
-    const isAdded = this.checkedPhones.indexOf(phone);
+    const isAdded = this.addedPhones.indexOf(phone);
 
     if (isAdded >= 0) {
-      this.checkedPhones[isAdded].quantity += quantity;
+      this.addedPhones[isAdded].quantity += quantity;
     } else {
       phone.quantity = quantity;
-      this.checkedPhones.push(phone);
+      this.addedPhones.push(phone);
     }
 
     this.refreshState();
   }
 
   add(phone) {
-    const index = this.checkedPhones.indexOf(phone);
+    const index = this.addedPhones.indexOf(phone);
 
-    this.checkedPhones[index].quantity += 1;
+    this.addedPhones[index].quantity += 1;
     this.refreshState();
   }
 
   remove(phone) {
-    const index = this.checkedPhones.indexOf(phone);
+    const index = this.addedPhones.indexOf(phone);
 
-    this.checkedPhones[index].quantity > 1 ? this.checkedPhones[index].quantity -= 1 : void(0);
+    this.addedPhones[index].quantity > 1 ? this.addedPhones[index].quantity -= 1 : void(0);
     this.refreshState();
   }
 
   deletePhone(phone) {
-    const index = this.checkedPhones.indexOf(phone);
+    const index = this.addedPhones.indexOf(phone);
 
-    this.checkedPhones.splice(index, 1);
+    this.addedPhones.splice(index, 1);
     this.refreshState();
   }
 
@@ -59,7 +59,7 @@ class ShoppingState {
   }
 
   getTotal() {
-    const total = this.checkedPhones.reduce((sum, el) => {
+    const total = this.addedPhones.reduce((sum, el) => {
       return sum + (el.price * el.quantity);
     }, 0);
 
@@ -69,7 +69,7 @@ class ShoppingState {
   getQuantity() {
     let quantity = 0;
 
-    this.checkedPhones.forEach((phone) => {
+    this.addedPhones.forEach((phone) => {
       quantity += phone.quantity;
     });
 
@@ -82,6 +82,6 @@ class ShoppingState {
   }
 }
 
-export default angular.module('services.shopping-state', [])
+export default angular.module('shoppingState', [])
   .service('shoppingState', ShoppingState)
   .name;
