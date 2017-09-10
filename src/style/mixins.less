@@ -1,0 +1,14 @@
+@fontPath: '../fonts/';
+
+.createFont(@folder: '', @fontName: 'sans-serif') {
+    @filePath: '@{fontPath}@{folder}/@{fontName}/@{fontName}';
+
+    font-family: @fontName;
+    src: url('@{filePath}.eot');
+    src: url('@{filePath}.eot?#iefix') format('embedded-opentype'),
+    url('@{filePath}.woff') format('woff'),
+    url('@{filePath}.ttf') format('truetype'),
+    url('@{filePath}.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
