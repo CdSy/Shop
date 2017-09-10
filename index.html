@@ -7,14 +7,21 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="icons/font-awesome-4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="dist/app.620b76d01d2fa25e1a46.js"></script>
+  <script type="text/javascript" src="dist/app.f6651ba58b1d50e526fe.js"></script>
   <base href="/">
-  <link href="dist/css/app.css" rel="stylesheet"></head>
+  <link href="dist/css/app.css" rel="stylesheet">
+</head>
 <style>
-  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { 
-    display: none; 
-  } 
+  [ng\:cloak],
+  [ng-cloak],
+  [data-ng-cloak],
+  [x-ng-cloak],
+  .ng-cloak,
+  .x-ng-cloak {
+    display: none;
+  }
 </style>
+
 <body>
   <header class="header" ng-controller="HeaderController as header">
     <div class="container">
@@ -27,15 +34,20 @@
         </div>
         <div class="col-md-3 col-md-offset-7 text-right">
           <div class="shoping-cart">
-            <i class="fa fa-shopping-cart fa-6" aria-hidden="true"></i>
-            <div class="info" ng-cloak>
-              <div>
-                В корзине <span class="bold">{{ header.shoppingState.quantity }} товаров</span>
-              </div>
-              <div>
-                На сумму <span class="bold">{{ header.shoppingState.totalMoney }} рублей</span>
-              </div>
-            </div>
+            <div class="text-center">{{ header.shoppingState.totalMoney }} <span class="g-ruble"></span></div>
+            <a href="/shopping-cart" class="cart text-center">
+                  <i class="fa fa-shopping-cart fa-6" aria-hidden="true"></i>
+                  <div class="quantity text-center">{{ header.shoppingState.quantity }}</div> 
+                </a>
+
+            <!-- <div class="info">
+                  <div>
+                    В корзине <span class="bold">{{ header.shoppingState.quantity }} товаров</span>
+                  </div>
+                  <div>
+                    На сумму <span class="bold">{{ header.shoppingState.totalMoney }} рублей</span>
+                  </div>
+                </div> -->
           </div>
         </div>
       </div>
