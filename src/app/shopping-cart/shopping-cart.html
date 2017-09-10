@@ -1,0 +1,66 @@
+<div class="p-cart-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1 class="title">Корзина</h1>
+				<i class="fa fa-shopping-cart fa-6" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="row" ng-hide="cart.shoppingState.checkedPhones.length === 0">
+			<div class="col-md-12">
+				<div class="table-body">
+					<table>
+						<thead class="table-head">
+							<tr>
+								<td></td>
+								<td>Наименование</td>
+								<td align="center">Описание</td>
+								<td align="center">Количество</td>
+								<td align="center">Цена</td>
+								<td></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="phone-row" ng-repeat="phone in cart.shoppingState.checkedPhones">
+								<td>
+									<img ng-src="{{ phone.imageUrl }}" class="image" alt="{{ phone.name }}">
+								</td>
+								<td class="bold">{{ phone.name }}</td>
+								<td>{{ phone.snippet }}</td>
+								<td align="center">
+									<div class="control-wrapper">
+										<span class="quantity">{{phone.quantity }}</span>
+										<span class="control-arrows">
+											<div class="arrow" ng-click="cart.add(phone)"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+											<div class="arrow" ng-click="cart.remove(phone)"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+										</span>
+									</div>
+								</td>
+								<td>{{ phone.price }}Р</td>
+								<td>
+									<span class="remove-stuff" ng-click="cart.deletePhone(phone)">Удалить</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-hide="cart.shoppingState.checkedPhones.length === 0">
+			<div class="col-md-4 col-md-offset-8 text-right">
+				<div class="table-footer">
+					Ваш заказ на сумму <span class="bold">{{ cart.shoppingState.totalMoney }}Р</span>
+					<button type="button" class="btn btn-success btn-lg disabled">Оплатить</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-hide="cart.shoppingState.checkedPhones.length > 0">
+			<div class="col-md-12 text-center">
+				<div ng-class="{empty: cart.shoppingState.checkedPhones.length === 0}">Ваша корзина пуста</div>
+				<a href="/">Главная страница</a>
+			</div>
+		</div>
+	</div>
+</div>

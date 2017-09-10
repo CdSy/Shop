@@ -1,0 +1,13 @@
+<div class="main">
+	<div class="container phones-wrapper">
+		<div class="b-phone-card" ng-repeat="phone in home.shoppingState.phones">
+			<img ng-src="{{ phone.imageUrl }}" class="image" alt="{{phone.name}}">
+			<div class="name">{{ phone.name }}</div>
+			<div class="price">{{ phone.price }} рублей</div>
+			<button ng-click="home.buyPhone(phone)" type="button" class="btn btn-primary btn-default">
+				<i class="fa fa-cart-plus fa-2" aria-hidden="true"></i>
+				В корзину
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div class="content">
+	<div class="title">Добавить в корзину</div>
+	<div class="info-block">
+		<img ng-src="{{ home.currentPhone.imageUrl }}" alt="" class="cover">
+		<div class="info">
+			<table>
+				<tbody>
+					<tr>
+						<td class="bold">
+							{{ home.currentPhone.name }}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Количество:
+						</td>
+						<td class="text-right">
+							<input type="number" id="quantity"
+										 step="1" max="50" min="1" required
+										 ng-model="home.quantity" ng-change="home.changeSum()">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Сумма:
+						</td>
+						<td>
+							{{ home.sum }} рублей
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="btn btn-lg btn-success" ng-click="home.addToCart()">
+		<i class="fa fa-cart-plus fa-2" aria-hidden="true"></i> 
+		Добавить
+	</div>
+</div>
