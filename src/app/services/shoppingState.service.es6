@@ -67,11 +67,9 @@ class ShoppingState {
   }
 
   getQuantity() {
-    let quantity = 0;
-
-    this.addedPhones.forEach((phone) => {
-      quantity += phone.quantity;
-    });
+    const quantity = this.addedPhones.reduce((sum, phone) => {
+      return sum + phone.quantity;
+    }, 0);
 
     return quantity;
   }
