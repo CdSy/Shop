@@ -6805,21 +6805,46 @@ button.close {
   font-weight: normal;
   font-style: normal;
 }
+body {
+  padding-top: 140px;
+}
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   margin-bottom: 40px;
-  background-color: #fafafa;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgba(250, 250, 250, 0.85);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1), inset 0 0 10px 45px rgba(250, 250, 250, 0.9);
+  z-index: 10;
 }
 .header .link {
   display: block;
   padding: 30px 0;
   font-size: 16px;
   text-decoration: none;
+  transition: color 0.25s ease;
+}
+.header .link.active {
+  color: #ec5a1e;
 }
 .header .shoping-cart {
   display: inline-block;
   padding: 10px 0;
   text-align: left;
+}
+.header .shoping-cart .bold {
+  margin-left: 5px;
+  font-weight: 600;
+}
+.header .shoping-cart .fa {
+  position: absolute;
+  right: 8px;
+  font-size: 36px;
+  line-height: 40px;
+  vertical-align: middle;
+  color: #3382d1;
+  transition: color 0.25s ease;
 }
 .header .shoping-cart .cart {
   position: relative;
@@ -6842,16 +6867,7 @@ button.close {
   line-height: 22px;
   color: #fff;
 }
-.header .shoping-cart .bold {
-  margin-left: 5px;
-  font-weight: 600;
-}
-.header .shoping-cart .fa {
-  position: absolute;
-  right: 8px;
-  font-size: 36px;
-  line-height: 40px;
-  vertical-align: middle;
+.header .shoping-cart .cart.active .fa {
   color: #4caf50;
 }
 .phones-wrapper {
