@@ -6866,6 +6866,7 @@ body {
   font-size: 12px;
   line-height: 22px;
   color: #fff;
+  box-shadow: 0 0 0 2px #fff;
 }
 .header .shoping-cart .cart.active .fa {
   color: #4caf50;
